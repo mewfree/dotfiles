@@ -1,0 +1,124 @@
+# Configuration du Conky
+# édité par Claude Picot : http://www.clapico.com/
+# Inscrivez yes si vous souhaitez que Conky soit intégré à votre fond d'écran
+background yes
+own_window yes
+own_window_type conky
+own_window_transparent yes
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+# X font quand Xft n'est pas actif
+#font 5x7
+#font 6x10
+#font 7x13
+#font 8x13
+#font 9x15
+#font *mintsmild.se*
+#font -*-*-*-*-*-*-34-*-*-*-*-*-*-*
+# Inscrivez yes pour utiliser xft
+use_xft yes
+# Police à utiliser (Xft doit être actif)
+xftfont Ubuntu Mono:size=9
+# Text alpha quand Xft est utilisé
+xftalpha 0.8
+# Intervalle de rafraichissement en secondes
+update_interval 1.0
+# Nombre de fois où Conky dois se mettre à jour avant de quitter.
+# Inscrivez 0 si vous ne souhaitez pas que Conky s'arrête.
+total_run_times 0
+# Créez une fenêtre indépendante au lieu d'utiliser le bureau (requis dans nautilus)
+own_window no
+# Réduire l'effet de scintillement
+double_buffer yes
+# Taille minimum de la zone de texte
+minimum_size 450 0
+maximum_width 450
+# afficher les ombres
+draw_shades yes
+# afficher les contours
+draw_outline no
+# afficher les contours autour des textes
+draw_borders no
+# afficher les contours autour des graphiques
+draw_graph_borders yes
+# Espacement des séparations ?
+stippled_borders 8
+# Espacement des marges
+border_margin 4
+# largeur des contours
+border_width 1
+# Couleur par défaut du conky, ombres et contours
+default_color white
+default_shade_color black
+default_outline_color white
+# Utiliser sa propre fenêtre
+own_window yes
+# Effet de transparence
+own_window_transparent yes
+#Type de fenêtre
+own_window_type override
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+# Emplacement du texte
+alignment top_left
+#alignment top_right
+#alignment bottom_left
+#alignment bottom_right
+# Ecart entre les bords du Conky et les bords de l'écran (permet de positionner le Conky sur l'écran)
+gap_x 60
+gap_y 35
+# Soustraire là mémoire tampon à la mémoire utilisée
+no_buffers yes
+# Texte en Majuscules
+uppercase no
+# Nombre d'echantillons (processeurs pour faire la moyenne)
+# Indiquez 1 si vous ne voulez pas la moyenne
+cpu_avg_samples 2
+# Nombre d'échantillons (réseaux pour faire la moyenne)
+# Indiquez 1 si vous ne voulez pas la moyenne
+net_avg_samples 2
+# Forcez UTF8? (le support UTF8 support requiert XFT)
+override_utf8_locale yes
+# Ajoutez des espaces pour empêcher le mouvement des objets (ne concerne que certains objets)
+use_spacer right
+# Choix des couleurs
+#color1 blue
+color1 99FFFF
+# light blue
+color2 E0D6BA
+# orange
+#E77320
+color3 FFFFFF
+#color3 3BFE00
+# green
+color4 78BF39
+# red
+color5 CC0000
+text_buffer_size 2048
+
+# tout ce qui suit TEXT sera repris dans le Conky
+
+
+ 
+
+TEXT
+${color3}Bienvenue sur $nodename Systeme $sysname $kernel
+${color3}IP : ${color1}${addr wlan0}${color3} ESSID : ${color1}${wireless_essid wlan0}${color3} Signal WiFi: ${color1}${wireless_link_qual wlan0}%
+${color3}Load :${color1} $loadavg
+
+${color3}CPU Utilisé :${color1} $cpu% ${color3}${cpubar}
+${color3}${cpugraph yellow FC8820}
+${color3}Mémoire RAM :${color1} $mem/$memmax - $memperc% ${color3}${membar}
+${color3}Utilisation du Swap :${color1} $swap/$swapmax - $swapperc% ${color3}${swapbar}
+${color3}Température : ${color1}$acpitemp °C
+${color3}Espace Disque
+${color3}Libre : ${color1}${fs_free /}/${fs_size /} ${color3}${fs_bar /}
+${color3}Processus :${color1} $processes ${color3} En cours :${color1} $running_processes
+${color3}Utilisation du CPU
+${offset 10}${color3}Nom ${alignr 50}PID ${alignr 20}CPU%
+${offset 10}${color1}${top name 1} ${alignr 30}${top pid 1} ${alignr 15}${top cpu 1}
+${offset 10}${color #888888}${top name 2} ${alignr 30}${top pid 2} ${alignr 15}${top cpu 2}
+${offset 10}${color #888888}${top name 3} ${alignr 30}${top pid 3} ${alignr 15}${top cpu 3}
+${color3}Utilisation de la Mémoire
+${offset 10}${color3}${color3}Nom ${alignr 50}PID ${alignr 20}Mem%
+${offset 10}${color1}${top_mem name 1} ${alignr 30}${top_mem pid 1} ${alignr 15}${top_mem mem 1}
+${offset 10}${color lightgrey}${top_mem name 2} ${alignr 30}${top_mem pid 2} ${alignr 15}${top_mem mem 2}
+${offset 10}${color lightgrey}${top_mem name 3} ${alignr 30}${top_mem pid 3} ${alignr 15}${top_mem mem 3}
