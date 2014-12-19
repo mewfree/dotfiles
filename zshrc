@@ -55,21 +55,31 @@ zstyle ':completion:*' list-colors "=(#b) #([0-9]#)*=36=31"
 alias ls="ls --color=auto --human-readable"
 alias ll="ls -l"
 alias la="ls -lA"
+
 alias yu="yaourt -Syua --devel --noconfirm"
+
+alias gc="git commit"
+alias gca="git commit -a"
+alias gcm="git commit -a -m"
+alias gps="git push"
+alias gpl="git pull"
+
 alias proxyon="gsettings set org.gnome.system.proxy mode 'manual'"
 alias proxyoff="gsettings set org.gnome.system.proxy mode 'none'"
 alias whatismyip="curl http://ipecho.net/plain; echo;"
+
 alias Misc="cd /home/damien/Seafile/Personal/Misc"
 alias Seafile="cd /home/damien/Seafile/Personal/"
 alias NCCU="cd /home/damien/Seafile/Personal/NCCU"
 alias to-do="vim /home/damien/Seafile/Personal/Misc/todo.txt"
 alias todo="vim /home/damien/Seafile/Personal/Misc/todo.txt"
+alias note="vim /home/damien/Seafile/Personal/Misc/notes.txt"
+alias notes="vim /home/damien/Seafile/Personal/Misc/notes.txt"
+
 alias reboot="sudo systemctl reboot"
 alias shutdown="sudo systemctl poweroff"
 alias poweroff="sudo systemctl poweroff"
 alias halt="sudo systemctl halt"
-alias note="vim /home/damien/Seafile/Personal/Misc/notes.txt"
-alias notes="vim /home/damien/Seafile/Personal/Misc/notes.txt"
 
 # Plugins
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
