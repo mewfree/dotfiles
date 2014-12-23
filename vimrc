@@ -82,6 +82,9 @@ let g:bufferline_echo = 0
 " easymotion
 map <Leader> <Plug>(easymotion-prefix)
 
+" vim-airline
+let g:airline_powerline_fonts = 1
+
 " remapping gt & gT to switch between buffers instead of tabs if no tabs is open
 if tabpagenr("$") > 1
   unmap gt
