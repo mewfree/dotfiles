@@ -76,6 +76,9 @@ let mapleader=","
 let g:slime_target = "tmux"
 let g:slime_python_ipython = 1
 
+" vim-bufferline
+let g:bufferline_echo = 0
+
 " easymotion
 map <Leader> <Plug>(easymotion-prefix)
 
