@@ -78,6 +78,8 @@ let g:slime_python_ipython = 1
 
 " vim-bufferline
 let g:bufferline_echo = 0
+let g:bufferline_active_buffer_left = '['
+let g:bufferline_active_buffer_right = ']'
 
 " easymotion
 map <Leader> <Plug>(easymotion-prefix)
