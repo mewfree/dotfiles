@@ -56,6 +56,7 @@ autocmd FileType ruby setlocal shiftwidth=2
 autocmd FileType r setlocal shiftwidth=2
 autocmd FileType javascript setlocal shiftwidth=2
 autocmd FileType html setlocal shiftwidth=2
+autocmd FileType tex setlocal shiftwidth=2
 
 " Disable arrow keys
 for prefix in ['i', 'n', 'v']
