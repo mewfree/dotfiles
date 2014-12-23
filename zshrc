@@ -64,6 +64,7 @@ alias gcm="git commit -a -m"
 alias gps="git push"
 alias gpsh="git push"
 alias gpl="git pull"
+alias gpll="git pull"
 
 alias proxyon="gsettings set org.gnome.system.proxy mode 'manual'"
 alias proxyoff="gsettings set org.gnome.system.proxy mode 'none'"
