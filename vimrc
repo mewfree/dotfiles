@@ -47,7 +47,7 @@ set directory=~/.vim/swap
 filetype plugin on
 filetype indent plugin on
 
-" Typing jk or kj is like ESC  
+" Typing jk or kj is like ESC
 inoremap jk <ESC>
 inoremap kj <ESC>
 
