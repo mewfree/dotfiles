@@ -79,9 +79,6 @@ let g:slime_python_ipython = 1
 " vim-bufferline
 let g:bufferline_echo = 0
 
-" vim-airline
-let g:airline#extensions#tabline#enabled = 1
-
 " easymotion
 map <Leader> <Plug>(easymotion-prefix)
 
