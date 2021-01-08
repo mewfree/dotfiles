@@ -1,5 +1,5 @@
 # Basic stuff...
-HISTFILE=$HOME/.zsh_history # Note to self: the MAJ are actually really important
+HISTFILE=$HOME/.zsh_history # Note to self: the uppercase are actually really important
 HISTSIZE=100000
 SAVEHIST=100000
 export KEYTIMEOUT=1
@@ -25,11 +25,11 @@ setopt AUTO_CD # no need to cd in dir, just type dir
 setopt RM_STAR_WAIT # 10 sec wait if you rm *
 setopt NO_BEEP
 setopt AUTO_LIST # show suggests if ambiguous completion
-setopt AUTO_PARAM_SLASh
-setopt COMPLETE_ALIASEs
-setopt COMPLETE_IN_WORd
-setopt HIST_IGNORE_DUPs
-setopt EXTENDED_HISTORy
+setopt AUTO_PARAM_SLASH
+setopt COMPLETE_ALIASES
+setopt COMPLETE_IN_WORD
+setopt HIST_IGNORE_DUPS
+setopt EXTENDED_HISTORY
 setopt APPEND_HISTORY
 
 # Completion
