@@ -122,7 +122,7 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=3"
 # source $HOME/.cargo/env
 
 # Flutter
-export PATH=${PATH}:${HOME}/dev/flutter/bin
+export PATH=${PATH}:${HOME}/flutter/bin
 
 # asdf
 . $(brew --prefix asdf)/asdf.sh
