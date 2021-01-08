@@ -1,4 +1,5 @@
-Dotfiles
-========
+# dotfiles
 
-My dotfiles :) More or less interesting (check out my vimrc though)
+Symlink files in this repo to `~`.
+
+Exception for `init.vim` which belongs to `~/.config/nvim/init.vim`.

@@ -1,22 +1,24 @@
 # Basic stuff...
 HISTFILE=$HOME/.zsh_history # Note to self: the MAJ are actually really important
-HISTSIZE=5000
-SAVEHIST=5000
-export KEYTIMEOUT=10
-export editor="vim"
+HISTSIZE=100000
+SAVEHIST=100000
+export KEYTIMEOUT=1
+export EDITOR="nvim"
+export VISUAL="nvim"
+export HOMEBREW_GITHUB_API_TOKEN=$(security find-generic-password -s 'HOMEBREW_GITHUB_API_TOKEN' -w)
+export NPM_TOKEN=$(security find-generic-password -s 'NPM_TOKEN' -w)
 
 # Vi mode :)
 bindkey -v
 bindkey -M viins 'jk' vi-cmd-mode
 bindkey -M viins 'kj' vi-cmd-mode
-zstyle :compinstall filename '/home/damien/.zshrc'
 stty stop '^-' start '^-' # don't freeze terminal if I type CTRL-S
 autoload -Uz compinit promptinit
 compinit
 promptinit
 
 # My own prompt theme
-prompt mew blue
+prompt suse
 
 # Options
 setopt AUTO_CD # no need to cd in dir, just type dir
@@ -52,11 +54,9 @@ zstyle ':completion:*' file-sort modification reverse
 zstyle ':completion:*' list-colors "=(#b) #([0-9]#)*=36=31"
 
 # Aliases
-alias ls="ls --color=auto --human-readable"
+alias ls="ls -Gph"
 alias ll="ls -l"
 alias la="ls -lA"
-
-alias yu="yaourt -Syua --devel --noconfirm"
 
 alias gc="git commit"
 alias gca="git commit -a"
@@ -65,30 +65,34 @@ alias gps="git push"
 alias gpsh="git push"
 alias gpl="git pull"
 alias gpll="git pull"
+alias gs="git status"
 
-alias proxyon="gsettings set org.gnome.system.proxy mode 'manual'"
-alias proxyoff="gsettings set org.gnome.system.proxy mode 'none'"
 alias whatismyip="curl http://ipecho.net/plain; echo;"
 
-alias Misc="cd /home/damien/Seafile/Personal/Misc"
-alias Seafile="cd /home/damien/Seafile/Personal/"
-alias NCCU="cd /home/damien/Seafile/Personal/NCCU"
-alias to-do="vim /home/damien/Seafile/Personal/Misc/todo.txt"
-alias todo="vim /home/damien/Seafile/Personal/Misc/todo.txt"
-alias note="vim /home/damien/Seafile/Personal/Misc/notes.txt"
-alias notes="vim /home/damien/Seafile/Personal/Misc/notes.txt"
+alias rsp='rsync -rvP --ignore-existing'
+alias rsa='rsync -avP'
 
-alias reboot="sudo systemctl reboot"
-alias shutdown="sudo systemctl poweroff"
-alias poweroff="sudo systemctl poweroff"
-alias halt="sudo systemctl halt"
+alias muc='softwareupdate -l'
+alias mu='sudo softwareupdate -iva'
+alias mua='sudo softwareupdate -iva'
+alias mur='sudo softwareupdate -irv'
+
+alias killaudio="sudo kill -9 `ps ax|grep 'coreaudio[a-z]' | awk '{print $1}'`"
+
+alias emacs="/usr/local/bin/emacs -nw"
 
 # Plugins
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
-
+fpath=(/usr/local/share/zsh-compleitons $fpath)
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/local/share/zsh-history-substring-search/zsh-history-substring-search.zsh
 bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
+
+# Auto ls after cd
+function chpwd() {
+  emulate -L zsh
+  ls -a
+}
 
 # Show the mode in vi-mode
 precmd() {
@@ -105,3 +109,20 @@ zle-line-init() {
 }
 zle -N zle-keymap-select
 zle -N zle-line-init
+
+# Setup zsh-autosuggestions
+source /Users/damien/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+bindkey '^f' vi-forward-word
+bindkey '^e' end-of-line
+
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=3"
+
+# Rust
+# source $HOME/.cargo/env
+
+# Flutter
+export PATH=${PATH}:${HOME}/dev/flutter/bin
+
+# asdf
+. $(brew --prefix asdf)/asdf.sh

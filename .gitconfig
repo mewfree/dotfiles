@@ -1,0 +1,10 @@
+[user]
+	email = damien.gonot@gmail.com
+	name = Damien Gonot
+	signingkey = 2A084BEA3841A26F
+[core]
+	editor = nvim
+[pull]
+	rebase = true
+[init]
+	defaultBranch = main
