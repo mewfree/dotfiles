@@ -79,6 +79,8 @@ alias mur='sudo softwareupdate -irv'
 
 alias killaudio="sudo kill -9 `ps ax|grep 'coreaudio[a-z]' | awk '{print $1}'`"
 
+alias emacs="emacs -nw"
+
 # Plugins
 fpath=(/usr/local/share/zsh-compleitons $fpath)
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
