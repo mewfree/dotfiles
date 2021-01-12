@@ -12,14 +12,14 @@
       org-journal-date-prefix "#+title: "
       org-journal-date-format "%Y-%m-%d"
       org-journal-file-format "%Y-%m-%d.org"
-      org-journal-time-prefix "* ")
+      org-journal-time-prefix "* "
+      org-roam-directory "~/meworg")
 
 (use-package! org-fancy-priorities
               :hook (org-mode . org-fancy-priorities-mode)
               :config (setq org-fancy-priorities-list '((?A . "HIGH")
                                                         (?B . "MEDIUM")
                                                         (?C . "LOW"))))
-
 (after! org
         (setq org-directory "~/meworg/"
               org-agenda-files '("~/meworg/")
