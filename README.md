@@ -1,5 +1,7 @@
 # dotfiles
 
-Symlink files in this repo to `~`.
-
-Exception for `init.vim` which belongs in `~/.config/nvim/`.
+`.zshrc` => `~/`
+`.tmux.conf` => `~/`
+`.doom.d` => `~/`
+`init.vim` => `~/.config/nvim/`
+`kitty.conf` => `~/.config/kitty/`
