@@ -4,7 +4,10 @@
       user-mail-address "damien.gonot@gmail.com"
       doom-theme 'doom-one
       display-line-numbers-type 'relative
-      projectile-project-search '("~/dev/"))
+      projectile-project-search '("~/dev/")
+      deft-directory "~/meworg"
+      deft-extensions '("org")
+      deft-recursive t)
 
 (use-package! org-fancy-priorities
               :hook (org-mode . org-fancy-priorities-mode)
