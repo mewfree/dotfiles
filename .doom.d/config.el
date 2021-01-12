@@ -7,7 +7,12 @@
       projectile-project-search '("~/dev/")
       deft-directory "~/meworg"
       deft-extensions '("org")
-      deft-recursive t)
+      deft-recursive t
+      org-journal-dir "~/meworg/journal/daily"
+      org-journal-date-prefix "#+title: "
+      org-journal-date-format "%Y-%m-%d"
+      org-journal-file-format "%Y-%m-%d.org"
+      org-journal-time-prefix "* ")
 
 (use-package! org-fancy-priorities
               :hook (org-mode . org-fancy-priorities-mode)
