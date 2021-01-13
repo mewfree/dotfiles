@@ -12,7 +12,7 @@
       org-journal-date-prefix "#+title: "
       org-journal-date-format "%Y-%m-%d"
       org-journal-file-format "%Y-%m-%d.org"
-      org-journal-time-prefix "* "
+      org-journal-time-prefix "\n* "
       org-roam-directory "~/meworg")
 
 (use-package! org-fancy-priorities
