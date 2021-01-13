@@ -22,7 +22,8 @@
                                                         (?C . "LOW"))))
 (after! org
         (setq org-directory "~/meworg"
-              org-agenda-files '("~/meworg" "~/meworg/journal/daily")
+              org-default-notes-file (concat org-directory "/notes.org")
+              org-agenda-files (directory-files-recursively "~/meworg/" "\\.org$")
               org-todo-keywords '((sequence "TODO(t)" "PROGRESS(p)" "WAITING(w)" "|" "DONE(d)" "CANCELLED(c)"))
               org-todo-keyword-faces '(("TODO" . "turquoise2")
                                        ("PROGRESS" . "khaki2")
