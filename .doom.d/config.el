@@ -21,8 +21,8 @@
                                                         (?B . "MEDIUM")
                                                         (?C . "LOW"))))
 (after! org
-        (setq org-directory "~/meworg/"
-              org-agenda-files '("~/meworg/")
+        (setq org-directory "~/meworg"
+              org-agenda-files '("~/meworg" "~/meworg/journal/daily")
               org-todo-keywords '((sequence "TODO(t)" "PROGRESS(p)" "WAITING(w)" "|" "DONE(d)" "CANCELLED(c)"))
               org-todo-keyword-faces '(("TODO" . "turquoise2")
                                        ("PROGRESS" . "khaki2")
