@@ -13,7 +13,8 @@
       org-journal-date-format "%Y-%m-%d"
       org-journal-file-format "%Y-%m-%d.org"
       org-journal-time-prefix "\n* "
-      org-roam-directory "~/meworg")
+      org-roam-directory "~/meworg"
+      +org-roam-open-buffer-on-find-file nil)
 
 (use-package! org-fancy-priorities
               :hook (org-mode . org-fancy-priorities-mode)
