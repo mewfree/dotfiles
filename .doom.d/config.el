@@ -16,6 +16,11 @@
       org-roam-directory "~/meworg"
       +org-roam-open-buffer-on-find-file nil)
 
+(unless (display-graphic-p)
+  (xterm-mouse-mode 1)
+  (global-set-key (kbd "<mouse-4>") 'scroll-down-line)
+  (global-set-key (kbd "<mouse-5>") 'scroll-up-line))
+
 (use-package! org-fancy-priorities
               :hook (org-mode . org-fancy-priorities-mode)
               :config (setq org-fancy-priorities-list '((?A . "HIGH")
