@@ -21,6 +21,22 @@
   (global-set-key (kbd "<mouse-4>") 'scroll-down-line)
   (global-set-key (kbd "<mouse-5>") 'scroll-up-line))
 
+(defun today () (interactive) (insert (format-time-string "%Y-%m-%d")))
+(defun today-with-time () (interactive) (insert (format-time-string "%Y-%m-%d %H:%m")))
+(defun timestamp () (interactive) (insert (format-time-string "%H:%m")))
+
+(map! :leader
+      :desc "Add ISO 8601 date"
+      :n "i d" #'today)
+
+(map! :leader
+      :desc "Add ISO 8601 date and time"
+      :n "i D" #'today-with-time)
+
+(map! :leader
+      :desc "Add timestamp"
+      :n "i t" #'timestamp)
+
 (use-package! org-fancy-priorities
               :hook (org-mode . org-fancy-priorities-mode)
               :config (setq org-fancy-priorities-list '((?A . "HIGH")
