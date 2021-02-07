@@ -22,8 +22,8 @@
   (global-set-key (kbd "<mouse-5>") 'scroll-up-line))
 
 (defun today () (interactive) (insert (format-time-string "%Y-%m-%d")))
-(defun today-with-time () (interactive) (insert (format-time-string "%Y-%m-%d %H:%m")))
-(defun timestamp () (interactive) (insert (format-time-string "%H:%m")))
+(defun today-with-time () (interactive) (insert (format-time-string "%Y-%m-%d %H:%M")))
+(defun timestamp () (interactive) (insert (format-time-string "%H:%M")))
 
 (map! :leader
       :desc "Add ISO 8601 date"
