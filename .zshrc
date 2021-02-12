@@ -125,4 +125,4 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=3"
 export PATH=${PATH}:${HOME}/flutter/bin
 
 # asdf
-. $(brew --prefix asdf)/asdf.sh
+. /usr/local/opt/asdf/asdf.sh
