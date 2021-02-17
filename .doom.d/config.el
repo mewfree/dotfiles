@@ -44,6 +44,7 @@
                                                         (?C . "LOW"))))
 (after! org
         (setq org-directory "~/meworg"
+              org-cycle-separator-lines 1
               org-default-notes-file (concat org-directory "/notes.org")
               org-agenda-files (directory-files-recursively "~/meworg/" "\\.org$")
               org-todo-keywords '((sequence "TODO(t)" "PROGRESS(p)" "WAITING(w)" "|" "DONE(d)" "CANCELLED(c)"))
