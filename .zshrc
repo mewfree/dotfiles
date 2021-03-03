@@ -83,10 +83,18 @@ alias emacs="emacs -nw"
 
 # Plugins
 fpath=(/usr/local/share/zsh-compleitons $fpath)
+
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
 source /usr/local/share/zsh-history-substring-search/zsh-history-substring-search.zsh
 bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
+
+source /Users/damien/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+bindkey '^f' vi-forward-word
+bindkey '^e' end-of-line
+
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=3"
 
 # Auto ls after cd
 function chpwd() {
@@ -109,14 +117,6 @@ zle-line-init() {
 }
 zle -N zle-keymap-select
 zle -N zle-line-init
-
-# Setup zsh-autosuggestions
-source /Users/damien/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-
-bindkey '^f' vi-forward-word
-bindkey '^e' end-of-line
-
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=3"
 
 # Rust
 # source $HOME/.cargo/env
