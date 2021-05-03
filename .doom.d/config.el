@@ -21,6 +21,8 @@
   (global-set-key (kbd "<mouse-4>") 'scroll-down-line)
   (global-set-key (kbd "<mouse-5>") 'scroll-up-line))
 
+(defalias 'org-babel-execute:julia 'org-babel-execute:julia-vterm)
+
 (defun today () (interactive) (insert (format-time-string "%Y-%m-%d")))
 (defun today-with-time () (interactive) (insert (format-time-string "%Y-%m-%d %H:%M")))
 (defun timestamp () (interactive) (insert (format-time-string "%H:%M")))

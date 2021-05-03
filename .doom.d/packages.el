@@ -3,3 +3,4 @@
 
 (package! org-super-agenda)
 (package! org-fancy-priorities)
+(package! ob-julia-vterm)
