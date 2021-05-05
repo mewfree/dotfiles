@@ -8,6 +8,7 @@
       deft-directory "~/meworg"
       deft-extensions '("org")
       deft-recursive t
+      display-time-24hr-format t
       org-journal-dir "~/meworg/journal/daily"
       org-journal-date-prefix "#+title: "
       org-journal-date-format "%Y-%m-%d"
@@ -15,6 +16,8 @@
       org-journal-time-prefix "\n* "
       org-roam-directory "~/meworg"
       +org-roam-open-buffer-on-find-file nil)
+
+(display-time-mode 1)
 
 (unless (display-graphic-p)
   (xterm-mouse-mode 1)
