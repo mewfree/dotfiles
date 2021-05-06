@@ -14,6 +14,7 @@
       org-journal-date-format "%Y-%m-%d"
       org-journal-file-format "%Y-%m-%d.org"
       org-journal-time-prefix "\n* "
+      org-link-file-path-type 'relative
       org-roam-directory "~/meworg"
       +org-roam-open-buffer-on-find-file nil)
 
