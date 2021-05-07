@@ -9,6 +9,7 @@
       deft-extensions '("org")
       deft-recursive t
       display-time-24hr-format t
+      org-babel-clojure-backend 'cider
       org-journal-dir "~/meworg/journal/daily"
       org-journal-date-prefix "#+title: "
       org-journal-date-format "%Y-%m-%d"
