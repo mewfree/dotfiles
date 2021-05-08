@@ -28,13 +28,6 @@
 
 (defalias 'org-babel-execute:julia 'org-babel-execute:julia-vterm)
 
-(add-to-list 'org-latex-classes
-             '("letter"
-               "\\documentclass{letter}"
-               ("\\section{%s}" . "\\section*{%s}")
-               ("\\subsection{%s}" . "\\subsection*{%s}")
-               ("\\subsubsection{%s}" . "\\subsubsection*{%s}")))
-
 (defun today () (interactive) (insert (format-time-string "%Y-%m-%d")))
 (defun today-with-time () (interactive) (insert (format-time-string "%Y-%m-%d %H:%M")))
 (defun timestamp () (interactive) (insert (format-time-string "%H:%M")))
@@ -68,5 +61,13 @@
                                        ("DONE" . "grey42")
                                        ("CANCELLED" . "grey42")
                                        )))
+
+(with-eval-after-load 'ox-latex
+  (add-to-list 'org-latex-classes
+               '("letter"
+                 "\\documentclass{letter}"
+                 ("\\section{%s}" . "\\section*{%s}")
+                 ("\\subsection{%s}" . "\\subsection*{%s}")
+                 ("\\subsubsection{%s}" . "\\subsubsection*{%s}"))))
 
 (add-to-list 'initial-frame-alist '(fullscreen . maximized))
