@@ -5,20 +5,7 @@
       doom-theme 'doom-one
       display-line-numbers-type 'relative
       projectile-project-search '("~/dev/")
-      deft-directory "~/meworg"
-      deft-extensions '("org")
-      deft-recursive t
-      display-time-24hr-format t
-      org-babel-clojure-backend 'cider
-      org-journal-dir "~/meworg/journal/daily"
-      org-journal-date-prefix "#+title: "
-      org-journal-date-format "%Y-%m-%d"
-      org-journal-file-format "%Y-%m-%d.org"
-      org-journal-time-prefix "\n* "
-      org-journal-hide-entries-p nil
-      org-link-file-path-type 'relative
-      org-roam-directory "~/meworg"
-      +org-roam-open-buffer-on-find-file nil)
+      display-time-24hr-format t)
 
 (display-time-mode 1)
 
@@ -54,14 +41,26 @@
         (setq org-directory "~/meworg"
               org-cycle-separator-lines 1
               org-default-notes-file (concat org-directory "/notes.org")
-              org-agenda-files (directory-files-recursively "~/meworg/" "\\.org$")
+              org-agenda-files (list (concat org-directory "/personal.org") (concat org-directory "/gcal_personal.org"))
               org-todo-keywords '((sequence "TODO(t)" "PROGRESS(p)" "WAITING(w)" "|" "DONE(d)" "CANCELLED(c)"))
               org-todo-keyword-faces '(("TODO" . "turquoise2")
                                        ("PROGRESS" . "khaki2")
                                        ("WAITING" . "grey42")
                                        ("DONE" . "grey42")
-                                       ("CANCELLED" . "grey42")
-                                       )))
+                                       ("CANCELLED" . "grey42"))
+              org-journal-dir (concat org-directory "/journal/daily")
+              org-journal-date-prefix "#+title: "
+              org-journal-date-format "%Y-%m-%d"
+              org-journal-file-format "%Y-%m-%d.org"
+              org-journal-time-prefix "\n* "
+              org-journal-hide-entries-p nil
+              org-babel-clojure-backend 'cider
+              org-link-file-path-type 'relative
+              org-roam-directory org-directory
+              +org-roam-open-buffer-on-find-file nil
+              deft-directory org-directory
+              deft-extensions '("org")
+              deft-recursive t))
 
 (with-eval-after-load 'ox-latex
   (add-to-list 'org-latex-classes
