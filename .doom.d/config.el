@@ -5,6 +5,7 @@
       doom-theme 'doom-one
       display-line-numbers-type 'relative
       projectile-project-search '("~/dev/")
+      calendar-week-start-day 1
       display-time-24hr-format t)
 
 (display-time-mode 1)
