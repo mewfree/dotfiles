@@ -43,9 +43,10 @@
               org-cycle-separator-lines 1
               org-default-notes-file (concat org-directory "/notes.org")
               org-agenda-files (list (concat org-directory "/personal.org") (concat org-directory "/gcal_personal.org"))
-              org-todo-keywords '((sequence "TODO(t)" "PROGRESS(p)" "WAITING(w)" "|" "DONE(d)" "CANCELLED(c)"))
-              org-todo-keyword-faces '(("TODO" . "turquoise2")
-                                       ("PROGRESS" . "khaki2")
+              org-todo-keywords '((sequence "IDEA(i)" "TODO(t)" "PROGRESS(p)" "WAITING(w)" "|" "DONE(d)" "CANCELLED(c)"))
+              org-todo-keyword-faces '(("IDEA" . "mediumpurple1")
+                                       ("TODO" . "turquoise2")
+                                       ("PROGRESS" . "chartreuse2")
                                        ("WAITING" . "grey42")
                                        ("DONE" . "grey42")
                                        ("CANCELLED" . "grey42"))
