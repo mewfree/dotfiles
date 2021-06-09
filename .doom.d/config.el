@@ -42,7 +42,7 @@
         (setq org-directory "~/meworg"
               org-cycle-separator-lines 1
               org-default-notes-file (concat org-directory "/notes.org")
-              org-agenda-files (list (concat org-directory "/personal.org") (concat org-directory "/gcal_personal.org"))
+              org-agenda-files (append (list (concat org-directory "/personal.org")) (directory-files-recursively (concat org-directory "/projects") "\\.org$"))
               org-todo-keywords '((sequence "IDEA(i)" "TODO(t)" "PROGRESS(p)" "WAITING(w)" "|" "DONE(d)" "CANCELLED(c)"))
               org-todo-keyword-faces '(("IDEA" . "mediumpurple1")
                                        ("TODO" . "turquoise2")
