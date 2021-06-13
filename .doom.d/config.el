@@ -6,7 +6,8 @@
       display-line-numbers-type 'relative
       projectile-project-search '("~/dev/")
       calendar-week-start-day 1
-      display-time-24hr-format t)
+      display-time-24hr-format t
+      dap-auto-configure-features '(locals expressions))
 
 (display-time-mode 1)
 
@@ -38,6 +39,15 @@
               :config (setq org-fancy-priorities-list '((?A . "HIGH")
                                                         (?B . "MEDIUM")
                                                         (?C . "LOW"))))
+(use-package lsp-mode
+  :commands lsp
+  :ensure t
+  :diminish lsp-mode
+  :hook
+  (elixir-mode . lsp)
+  :init
+  (add-to-list 'exec-path "~/.config/elixir_ls"))
+
 (after! org
         (setq org-directory "~/meworg"
               org-cycle-separator-lines 1
