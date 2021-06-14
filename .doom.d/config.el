@@ -1,5 +1,6 @@
 ;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
 
+;; global variables
 (setq user-full-name "Damien Gonot"
       user-mail-address "damien.gonot@gmail.com"
       doom-theme 'doom-one
@@ -7,38 +8,58 @@
       projectile-project-search '("~/dev/")
       calendar-week-start-day 1
       display-time-24hr-format t
-      dap-auto-configure-features '(locals expressions))
+      dap-auto-configure-features '(locals expressions)
+      evil-snipe-spillover-scope 'buffer)
 
 (display-time-mode 1)
 
+;; enable scrolling
 (unless (display-graphic-p)
   (xterm-mouse-mode 1)
   (global-set-key (kbd "<mouse-4>") 'scroll-down-line)
   (global-set-key (kbd "<mouse-5>") 'scroll-up-line))
 
+;; alias julia-vterm => julia
 (defalias 'org-babel-execute:julia 'org-babel-execute:julia-vterm)
 
+;; easily add timestamps
 (defun today () (interactive) (insert (format-time-string "%Y-%m-%d")))
 (defun today-with-time () (interactive) (insert (format-time-string "%Y-%m-%d %H:%M")))
 (defun timestamp () (interactive) (insert (format-time-string "%H:%M")))
 
-(map! :leader
-      :desc "Add ISO 8601 date"
-      :n "i d" #'today)
+;; keybindings
+(map!
+ (:leader
+  (:prefix "TAB"
+    (:desc "Next workspace"
+     :n "n" #'+workspace:switch-next)
+    (:desc "Previous workspace"
+     :n "p" #'+workspace:switch-previous)
+    (:desc "New workspace"
+     :n "c" #'+workspace/new))
+  (:prefix "i"
+    (:desc "Add ISO 8601 date"
+     :n "d" #'today)
+    (:desc "Add ISO 8601 date and time"
+     :n "D" #'today-with-time)
+    (:desc "Add timestamp"
+     :n "t" #'timestamp))
+  (:prefix ("l" . "LSP")
+    (:desc "LSP describe thing at point"
+     :n "d" #'lsp-describe-thing-at-point)
+    (:desc "LSP go to definition"
+     :n "f" #'lsp-find-definition))
+  (:prefix ("j" . "jump to")
+    (:desc "next occurence of string"
+     :n "j" #'evil-avy-goto-char-timer))))
 
-(map! :leader
-      :desc "Add ISO 8601 date and time"
-      :n "i D" #'today-with-time)
-
-(map! :leader
-      :desc "Add timestamp"
-      :n "i t" #'timestamp)
-
+;; custom task priorities
 (use-package! org-fancy-priorities
               :hook (org-mode . org-fancy-priorities-mode)
               :config (setq org-fancy-priorities-list '((?A . "HIGH")
                                                         (?B . "MEDIUM")
                                                         (?C . "LOW"))))
+;; config Elixir LSP mode
 (use-package lsp-mode
   :commands lsp
   :ensure t
@@ -48,6 +69,7 @@
   :init
   (add-to-list 'exec-path "~/.config/elixir_ls"))
 
+;; org-related config
 (after! org
         (setq org-directory "~/meworg"
               org-cycle-separator-lines 1
