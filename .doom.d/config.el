@@ -92,6 +92,12 @@
               org-link-file-path-type 'relative
               org-roam-directory org-directory
               +org-roam-open-buffer-on-find-file nil
+              org-capture-templates '(("t" "Personal todo" entry
+                                       (file+headline (lambda () (concat org-directory "/personal.org")) "Tasks")
+                                       "* TODO %?" :empty-lines-before 1)
+                                      ("n" "Personal note" entry
+                                       (file (lambda () (concat org-directory "/notes.org")))
+                                       "* %?" :empty-lines-before 1))
               deft-directory org-directory
               deft-extensions '("org")
               deft-recursive t))
