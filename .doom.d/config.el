@@ -70,7 +70,6 @@
 ;; config Elixir LSP mode
 (use-package lsp-mode
   :commands lsp
-  :ensure t
   :diminish lsp-mode
   :hook
   (elixir-mode . lsp)
