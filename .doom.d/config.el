@@ -27,6 +27,12 @@
 (defun today-with-time () (interactive) (insert (format-time-string "%Y-%m-%d %H:%M")))
 (defun timestamp () (interactive) (insert (format-time-string "%H:%M")))
 
+;; open scratch if not open, close it if open
+(defun toggle-scratch () (interactive)
+       (if (get-buffer "*doom:scratch*")
+           (kill-buffer (get-buffer "*doom:scratch*"))
+           (doom/open-scratch-buffer)))
+
 ;; keybindings
 (map!
  (:leader
@@ -51,7 +57,9 @@
      :n "f" #'lsp-find-definition))
   (:prefix ("j" . "jump to")
     (:desc "next occurence of string"
-     :n "j" #'evil-avy-goto-char-timer))))
+     :n "j" #'evil-avy-goto-char-timer))
+  (:desc "Toggles scratch buffer"
+  :n "x" #'toggle-scratch)))
 
 ;; custom task priorities
 (use-package! org-fancy-priorities
