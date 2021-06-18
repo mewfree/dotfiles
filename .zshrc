@@ -126,3 +126,6 @@ export PATH=${PATH}:${HOME}/flutter/bin
 
 # asdf
 . /usr/local/opt/asdf/asdf.sh
+
+# direnv
+eval "$(direnv hook zsh)"
