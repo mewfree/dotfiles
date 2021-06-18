@@ -5,3 +5,5 @@
 (package! org-fancy-priorities)
 (package! ob-julia-vterm)
 (package! ob-elixir)
+(package! gleam-mode
+  :recipe (:host github :repo "gleam-lang/gleam-mode"))
