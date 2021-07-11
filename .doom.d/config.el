@@ -9,7 +9,8 @@
       calendar-week-start-day 1
       display-time-24hr-format t
       dap-auto-configure-features '(locals expressions)
-      evil-snipe-spillover-scope 'buffer)
+      evil-snipe-spillover-scope 'buffer
+      lsp-zig-zls-executable "~/zls/zls")
 
 (display-time-mode 1)
 
