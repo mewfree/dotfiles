@@ -105,6 +105,9 @@
                                        "* TODO %?" :empty-lines-before 1)
                                       ("n" "Personal note" entry
                                        (file (lambda () (concat org-directory "/notes.org")))
+                                       "* %?" :empty-lines-before 1)
+                                      ("i" "New idea" entry
+                                       (file (lambda () (concat org-directory "/ideas.org")))
                                        "* %?" :empty-lines-before 1))
               deft-directory org-directory
               deft-extensions '("org")
