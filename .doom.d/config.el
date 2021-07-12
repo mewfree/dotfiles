@@ -43,7 +43,9 @@
     (:desc "Previous workspace"
      :n "p" #'+workspace:switch-previous)
     (:desc "New workspace"
-     :n "c" #'+workspace/new))
+     :n "c" #'+workspace/new)
+    (:desc "Next workspace"
+     :n "SPC" #'+workspace:switch-next))
   (:prefix "i"
     (:desc "Add ISO 8601 date"
      :n "d" #'today)
