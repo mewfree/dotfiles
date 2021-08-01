@@ -4,6 +4,8 @@
 
 `.tmux.conf` => `~/`
 
+`.tmuxline` => `~/`
+
 `.doom.d` => `~/`
 
 `init.vim` => `~/.config/nvim/`
