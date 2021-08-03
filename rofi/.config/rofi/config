@@ -1,0 +1,7 @@
+rofi.kb-accept-entry:                Return
+rofi.kb-remove-char-back:            BackSpace
+rofi.kb-remove-to-eol:               Control+Shift+e
+rofi.kb-row-up:                      Up,Control+k
+rofi.kb-row-down:                    Down,Control+j
+rofi.kb-mode-next:                   Shift+Right,Control+l
+rofi.kb-mode-previous:               Shift+Left,Control+h
