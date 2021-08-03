@@ -1,13 +1,13 @@
 # dotfiles
 
-`.zshrc` => `~/`
+https://alexpearce.me/2016/02/managing-dotfiles-with-stow/
 
-`.tmux.conf` => `~/`
+`stow zsh` (`zsh/.zshrc` => `~/`)
 
-`.tmuxline` => `~/`
+`stow tmux` (`tmux/.tmux.conf` => `~/`, `tmux/.tmuxline` => `~/`)
 
-`.doom.d` => `~/`
+`stow doom-emacs` (`doom-emacs/.doom.d` => `~/`)
 
-`init.vim` => `~/.config/nvim/`
+`stow nvim` (`nvim/.config/.nvim/init.vim` => `~/.config/nvim/`)
 
-`kitty.conf` => `~/.config/kitty/`
+`stow kitty` (`kitty/.config/kitty/kitty.conf` => `~/.config/kitty/`)
