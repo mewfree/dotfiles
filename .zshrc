@@ -5,8 +5,12 @@ SAVEHIST=100000
 export KEYTIMEOUT=1
 export EDITOR="nvim"
 export VISUAL="nvim"
-export HOMEBREW_GITHUB_API_TOKEN=$(security find-generic-password -s 'HOMEBREW_GITHUB_API_TOKEN' -w)
-export NPM_TOKEN=$(security find-generic-password -s 'NPM_TOKEN' -w)
+case "$OSTYPE" in
+  darwin*)
+    export HOMEBREW_GITHUB_API_TOKEN=$(security find-generic-password -s 'HOMEBREW_GITHUB_API_TOKEN' -w)
+    export NPM_TOKEN=$(security find-generic-password -s 'NPM_TOKEN' -w)
+  ;;
+esac
 
 # Vi mode :)
 bindkey -v
@@ -77,20 +81,30 @@ alias mu='sudo softwareupdate -iva'
 alias mua='sudo softwareupdate -iva'
 alias mur='sudo softwareupdate -irv'
 
-alias killaudio="sudo kill -9 `ps ax|grep 'coreaudio[a-z]' | awk '{print $1}'`"
-
-alias emacs="emacs -nw"
+case "$OSTYPE" in
+  darwin*)
+    alias killaudio="sudo kill -9 `ps ax|grep 'coreaudio[a-z]' | awk '{print $1}'`"
+  ;;
+esac
 
 # Plugins
-fpath=(/usr/local/share/zsh-compleitons $fpath)
+case "$OSTYPE" in
+  darwin*)
+    fpath=(/usr/local/share/zsh-compleitons $fpath)
+    source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+    source /usr/local/share/zsh-history-substring-search/zsh-history-substring-search.zsh
+    source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+  ;;
+  linux*)
+    source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+    source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
+    source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+  ;;
+esac
 
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-source /usr/local/share/zsh-history-substring-search/zsh-history-substring-search.zsh
 bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
 
-source /Users/damien/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 bindkey '^f' vi-forward-word
 bindkey '^e' end-of-line
 
@@ -118,14 +132,20 @@ zle-line-init() {
 zle -N zle-keymap-select
 zle -N zle-line-init
 
-# Rust
-# source $HOME/.cargo/env
-
-# Flutter
-export PATH=${PATH}:${HOME}/flutter/bin
-
-# asdf
-. /usr/local/opt/asdf/asdf.sh
-
-# direnv
-eval "$(direnv hook zsh)"
+# Sourcing
+case "$OSTYPE" in
+  darwin*)
+    # Rust
+    source $HOME/.cargo/env
+    # Flutter
+    export PATH=${PATH}:${HOME}/flutter/bin
+    # direnv
+    eval "$(direnv hook zsh)"
+    # asdf
+    . /usr/local/opt/asdf/asdf.sh
+  ;;
+  linux*)
+    # asdf
+    . /opt/asdf-vm/asdf.sh
+  ;;
+esac
