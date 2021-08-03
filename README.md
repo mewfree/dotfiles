@@ -11,3 +11,5 @@ https://alexpearce.me/2016/02/managing-dotfiles-with-stow/
 `stow nvim` (`nvim/.config/.nvim/init.vim` => `~/.config/nvim/`)
 
 `stow kitty` (`kitty/.config/kitty/kitty.conf` => `~/.config/kitty/`)
+
+`stow hlwm` (`hlwm/.config/herbstluftwm/autostart` => `~/.config/herbstluftwm/`)
