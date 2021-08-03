@@ -13,3 +13,5 @@ https://alexpearce.me/2016/02/managing-dotfiles-with-stow/
 `stow kitty` (`kitty/.config/kitty/kitty.conf` => `~/.config/kitty/`)
 
 `stow hlwm` (`hlwm/.config/herbstluftwm/autostart` => `~/.config/herbstluftwm/`)
+
+`stow lemonbar` (`lemonbar/lemonbar.sh` => `~/`, `lemonbar/lemonbar_config.sh` => `~/`)
