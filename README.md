@@ -15,3 +15,5 @@ https://alexpearce.me/2016/02/managing-dotfiles-with-stow/
 `stow hlwm` (`hlwm/.config/herbstluftwm/autostart` => `~/.config/herbstluftwm/`)
 
 `stow lemonbar` (`lemonbar/lemonbar.sh` => `~/`, `lemonbar/lemonbar_config.sh` => `~/`)
+
+`stow paru` (`paru/.config/paru/paru.conf` => `~/.config/paru/`)
