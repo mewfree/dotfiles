@@ -19,3 +19,5 @@ https://alexpearce.me/2016/02/managing-dotfiles-with-stow/
 `stow paru` (`paru/.config/paru/paru.conf` => `~/.config/paru/`)
 
 `stow rofi` (`rofi/.config/rofi/config` => `~/.config/rofi/`)
+
+`stow git` (`git/.gitconfig` => `~/`)
