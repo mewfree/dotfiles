@@ -100,8 +100,6 @@
               org-journal-hide-entries-p nil
               org-babel-clojure-backend 'cider
               org-link-file-path-type 'relative
-              org-roam-directory org-directory
-              +org-roam-open-buffer-on-find-file nil
               org-capture-templates '(("t" "Personal todo" entry
                                        (file+headline (lambda () (concat org-directory "/personal.org")) "Tasks")
                                        "* TODO %?" :empty-lines-before 1)
