@@ -10,7 +10,8 @@
       display-time-24hr-format t
       dap-auto-configure-features '(locals expressions)
       evil-snipe-spillover-scope 'buffer
-      lsp-zig-zls-executable "~/zls/zls")
+      lsp-zig-zls-executable "~/zls/zls"
+      org-latex-create-formula-image-program 'dvisvgm)
 
 (display-time-mode 1)
 
