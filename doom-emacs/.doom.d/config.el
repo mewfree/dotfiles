@@ -80,6 +80,9 @@
   :init
   (add-to-list 'exec-path "~/.config/elixir_ls"))
 
+;; activate gleam-mode for .gleam files
+(add-to-list 'auto-mode-alist '("\\.gleam$" . gleam-mode))
+
 ;; org-related config
 (after! org
         (setq org-directory "~/meworg"
