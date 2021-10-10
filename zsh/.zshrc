@@ -132,6 +132,9 @@ zle-line-init() {
 zle -N zle-keymap-select
 zle -N zle-line-init
 
+# direnv
+eval "$(direnv hook zsh)"
+
 # Sourcing
 case "$OSTYPE" in
   darwin*)
@@ -139,8 +142,6 @@ case "$OSTYPE" in
     source $HOME/.cargo/env
     # Flutter
     export PATH=${PATH}:${HOME}/flutter/bin
-    # direnv
-    eval "$(direnv hook zsh)"
     # asdf
     . /usr/local/opt/asdf/asdf.sh
   ;;
