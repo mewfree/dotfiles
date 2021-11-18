@@ -7,3 +7,4 @@
 (package! ob-elixir)
 (package! gleam-mode
   :recipe (:host github :repo "gleam-lang/gleam-mode"))
+(package! org-fragtog)
