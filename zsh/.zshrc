@@ -5,12 +5,6 @@ SAVEHIST=100000
 export KEYTIMEOUT=1
 export EDITOR="nvim"
 export VISUAL="nvim"
-case "$OSTYPE" in
-  darwin*)
-    export HOMEBREW_GITHUB_API_TOKEN=$(security find-generic-password -s 'HOMEBREW_GITHUB_API_TOKEN' -w)
-    export NPM_TOKEN=$(security find-generic-password -s 'NPM_TOKEN' -w)
-  ;;
-esac
 
 # Vi mode :)
 bindkey -v
