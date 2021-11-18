@@ -2,7 +2,7 @@
 
 https://alexpearce.me/2016/02/managing-dotfiles-with-stow/
 
-`stow zsh` (`zsh/.zshrc` => `~/`)
+`stow zsh` (`zsh/.zshrc` => `~/`, `zsh/.zshenv` => `~/`)
 
 `stow tmux` (`tmux/.tmux.conf` => `~/`, `tmux/.tmuxline` => `~/`)
 

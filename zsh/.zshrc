@@ -128,19 +128,3 @@ zle -N zle-line-init
 
 # direnv
 eval "$(direnv hook zsh)"
-
-# Sourcing
-case "$OSTYPE" in
-  darwin*)
-    # Rust
-    source $HOME/.cargo/env
-    # Flutter
-    export PATH=${PATH}:${HOME}/flutter/bin
-    # asdf
-    . /opt/homebrew/opt/asdf/libexec/asdf.sh
-  ;;
-  linux*)
-    # asdf
-    . /opt/asdf-vm/asdf.sh
-  ;;
-esac
