@@ -84,10 +84,10 @@ esac
 # Plugins
 case "$OSTYPE" in
   darwin*)
-    fpath=(/usr/local/share/zsh-compleitons $fpath)
-    source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-    source /usr/local/share/zsh-history-substring-search/zsh-history-substring-search.zsh
-    source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+    fpath=(/opt/homebrew/share/zsh-compleitons $fpath)
+    source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+    source /opt/homebrew/share/zsh-history-substring-search/zsh-history-substring-search.zsh
+    source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
   ;;
   linux*)
     source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -137,7 +137,7 @@ case "$OSTYPE" in
     # Flutter
     export PATH=${PATH}:${HOME}/flutter/bin
     # asdf
-    . /usr/local/opt/asdf/asdf.sh
+    . /opt/homebrew/opt/asdf/libexec/asdf.sh
   ;;
   linux*)
     # asdf
