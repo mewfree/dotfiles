@@ -1,7 +1,7 @@
 [user]
 	email = damien.gonot@gmail.com
-	name = Damien Gonot
-	signingkey = 2A084BEA3841A26F
+    name = Damien Gonot
+    signingkey = 686E37EEC6018364
 [core]
 	editor = nvim
 [pull]
