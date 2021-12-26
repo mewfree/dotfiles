@@ -23,6 +23,8 @@
 
 ;; alias julia-vterm => julia
 (defalias 'org-babel-execute:julia 'org-babel-execute:julia-vterm)
+;; use my own LanguageServer.jl
+(setq lsp-julia-package-dir nil)
 
 ;; easily add timestamps
 (defun today () (interactive) (insert (format-time-string "%Y-%m-%d")))
