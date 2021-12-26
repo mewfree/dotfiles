@@ -126,3 +126,12 @@ zle-line-init() {
 zle -N zle-keymap-select
 zle -N zle-line-init
 
+# asdf
+case "$OSTYPE" in
+  darwin*)
+    . /opt/homebrew/opt/asdf/libexec/asdf.sh
+  ;;
+  linux*)
+    . /opt/asdf-vm/asdf.sh
+  ;;
+esac
