@@ -14,3 +14,6 @@ case "$OSTYPE" in
     . /opt/asdf-vm/asdf.sh
   ;;
 esac
+
+# direnv
+eval "$(direnv hook zsh)"

@@ -126,5 +126,3 @@ zle-line-init() {
 zle -N zle-keymap-select
 zle -N zle-line-init
 
-# direnv
-eval "$(direnv hook zsh)"
