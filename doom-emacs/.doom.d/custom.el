@@ -3,7 +3,9 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(safe-local-variable-values '((git-commit-major-mode . git-commit-elisp-text-mode))))
+ '(package-selected-packages '(elpher))
+ '(safe-local-variable-values '((git-commit-major-mode . git-commit-elisp-text-mode)))
+ '(warning-suppress-types '((emacs))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
