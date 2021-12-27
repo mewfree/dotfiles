@@ -11,3 +11,6 @@ esac
 
 # direnv
 eval "$(direnv hook zsh)"
+
+# opam
+eval $(opam env)
