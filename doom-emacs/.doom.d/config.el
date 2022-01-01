@@ -85,6 +85,9 @@
 ;; activate gleam-mode for .gleam files
 (add-to-list 'auto-mode-alist '("\\.gleam$" . gleam-mode))
 
+;; activate lsp-tailwindcss
+(use-package! lsp-tailwindcss)
+
 ;; org-related config
 (after! org
         (setq org-directory "~/meworg"
