@@ -80,7 +80,7 @@
   :hook
   (elixir-mode . lsp)
   :init
-  (add-to-list 'exec-path "~/.config/elixir_ls"))
+  (add-to-list 'exec-path "~/.config/elixir-ls"))
 
 ;; activate gleam-mode for .gleam files
 (add-to-list 'auto-mode-alist '("\\.gleam$" . gleam-mode))
