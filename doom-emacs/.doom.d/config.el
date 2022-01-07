@@ -118,6 +118,8 @@
                                       ("i" "New idea" entry
                                        (file (lambda () (concat org-directory "/ideas.org")))
                                        "* %?" :empty-lines-before 1))
+              org-plantuml-jar-path (expand-file-name "~/.config/plantuml/plantuml.jar")
+              org-ditaa-jar-path (expand-file-name "~/.config/ditaa/ditaa.jar")
               deft-directory org-directory
               deft-extensions '("org")
               deft-recursive t))
