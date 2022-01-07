@@ -6,6 +6,7 @@
 (package! ob-julia-vterm)
 (package! ob-elixir)
 (package! ob-fsharp)
+(package! ob-typescript)
 (package! gleam-mode
   :recipe (:host github :repo "gleam-lang/gleam-mode"))
 (package! org-fragtog)
