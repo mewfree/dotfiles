@@ -135,3 +135,31 @@
 (add-to-list 'initial-frame-alist '(fullscreen . maximized))
 
 (add-hook 'org-mode-hook 'org-fragtog-mode)
+
+;; custom org-links-backend
+(defun get-org-title (fPath)
+  (with-temp-buffer
+    (insert-file-contents fPath)
+    (nth 1 (car (org-collect-keywords '("TITLE"))))))
+
+(defun replace-title (title)
+  (setq org-titles
+    (mapcar
+      (lambda (x) (cons (get-org-title x) x)) (directory-files-recursively org-directory "[a-z].org")))
+  (delete-region (- (point) (length title)) (point))
+  (insert (format "[[file:%s][%s]]" (file-relative-name (cdr (assoc title org-titles))) title)))
+
+(defun org-links-backend (command &optional arg &rest ignored)
+  (interactive (list 'interactive))
+
+  (cl-case command
+    (interactive (company-begin-backend 'org-links-backend))
+    (prefix (and (eq major-mode 'org-mode)
+                (company-grab-symbol)))
+    (candidates
+      (remove-if-not
+        (lambda (c) (string-prefix-p arg c))
+        (mapcar (lambda (x) (get-org-title x)) (directory-files-recursively org-directory "[a-z].org"))))
+    (post-completion (replace-title arg))))
+
+(after! org (set-company-backend! 'org-mode 'org-links-backend))
