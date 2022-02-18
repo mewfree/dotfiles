@@ -169,6 +169,7 @@
        (web +lsp)               ; the tubes
        yaml              ; JSON, but readable
        (zig +lsp)
+       (beancount +lsp)
 
        :email
        ;;(mu4e +gmail)
