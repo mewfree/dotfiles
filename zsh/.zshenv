@@ -6,6 +6,9 @@ case "$OSTYPE" in
     eval "$(/usr/libexec/path_helper)"
     # Gleam-dev
     export PATH="$HOME/dev/gleam/target/release:$PATH"
+    # Chromium stuff for Puppeteer
+    export PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
+    export PUPPETEER_EXECUTABLE_PATH=`which chromium`
   ;;
 esac
 

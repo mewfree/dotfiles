@@ -120,6 +120,7 @@
                                        "* %?" :empty-lines-before 1))
               org-plantuml-jar-path (expand-file-name "~/.config/plantuml/plantuml.jar")
               org-ditaa-jar-path (expand-file-name "~/.config/ditaa/ditaa.jar")
+              ob-mermaid-cli-path "/opt/homebrew/opt/mermaid-cli/bin/mmdc"
               deft-directory org-directory
               deft-extensions '("org")
               deft-recursive t))
