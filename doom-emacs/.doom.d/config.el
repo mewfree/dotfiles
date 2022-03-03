@@ -138,6 +138,8 @@
 (add-hook 'org-mode-hook 'org-fragtog-mode)
 
 ;; custom org-links-backend
+(require 'cl)
+
 (defun get-org-title (fPath)
   (with-temp-buffer
     (insert-file-contents fPath)
