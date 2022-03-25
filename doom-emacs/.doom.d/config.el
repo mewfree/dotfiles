@@ -161,7 +161,7 @@
                 (company-grab-symbol)))
     (candidates
       (remove-if-not
-        (lambda (c) (string-prefix-p arg c))
+        (lambda (c) (string-prefix-p arg c t))
         (mapcar (lambda (x) (get-org-title x)) (directory-files-recursively org-directory "[a-z].org"))))
     (post-completion (replace-title arg))))
 
