@@ -157,7 +157,7 @@
 
   (cl-case command
     (interactive (company-begin-backend 'org-links-backend))
-    (prefix (and (eq major-mode 'org-mode)
+    (prefix (and (or (eq major-mode 'org-mode) (eq major-mode 'org-journal-mode))
                 (company-grab-symbol)))
     (candidates
       (remove-if-not
@@ -166,3 +166,4 @@
     (post-completion (replace-title arg))))
 
 (after! org (set-company-backend! 'org-mode 'org-links-backend))
+(after! org-journal (set-company-backend! 'org-journal-mode 'org-links-backend))
