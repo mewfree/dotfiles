@@ -135,3 +135,5 @@ case "$OSTYPE" in
     . /opt/asdf-vm/asdf.sh
   ;;
 esac
+
+[ -f "/Users/damien/.ghcup/env" ] && source "/Users/damien/.ghcup/env" # ghcup-env
