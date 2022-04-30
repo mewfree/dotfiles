@@ -16,3 +16,5 @@
   :recipe (:host github :repo "merrickluo/lsp-tailwindcss"))
 (package! futhark-mode)
 (package! ob-mermaid)
+(package! org-autolink
+  :recipe (:local-repo "~/dev/org-autolink"))
