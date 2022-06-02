@@ -18,3 +18,4 @@
 (package! ob-mermaid)
 (package! org-autolink
   :recipe (:local-repo "~/dev/org-autolink"))
+(package! ob-kotlin)
