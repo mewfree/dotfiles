@@ -9,6 +9,8 @@ case "$OSTYPE" in
     # Chromium stuff for Puppeteer
     export PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
     export PUPPETEER_EXECUTABLE_PATH=`which chromium`
+    # coursier (Scala)
+    export PATH="$PATH:$HOME/Library/Application Support/Coursier/bin"
   ;;
 esac
 
