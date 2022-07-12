@@ -3,7 +3,7 @@
 ;; global variables
 (setq user-full-name "Damien Gonot"
       user-mail-address "damien.gonot@gmail.com"
-      doom-theme 'doom-one
+      doom-theme 'doom-vibrant
       display-line-numbers-type 'relative
       projectile-project-search '("~/dev/")
       calendar-week-start-day 1
