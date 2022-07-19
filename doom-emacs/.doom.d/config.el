@@ -37,6 +37,11 @@
            (kill-buffer (get-buffer "*doom:scratch*"))
            (doom/open-scratch-buffer)))
 
+;; go to today's journal
+(defun goto-today-journal () (interactive)
+       (find-file
+        (concat org-journal-dir "/" (format-time-string org-journal-file-format))))
+
 ;; keybindings
 (map!
  (:leader
@@ -61,9 +66,11 @@
      :n "d" #'lsp-describe-thing-at-point)
     (:desc "LSP go to definition"
      :n "f" #'lsp-find-definition))
-  (:prefix ("j" . "jump to")
-    (:desc "next occurence of string"
-     :n "j" #'evil-avy-goto-char-timer))
+  (:prefix ("j" . "Jump to")
+    (:desc "Next occurence of string"
+     :n "j" #'evil-avy-goto-char-timer)
+    (:desc "Today's journal"
+     :n "t" #'goto-today-journal))
   (:desc "Toggles scratch buffer"
   :n "x" #'toggle-scratch)))
 
