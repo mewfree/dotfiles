@@ -42,6 +42,16 @@
        (find-file
         (concat org-journal-dir "/" (format-time-string org-journal-file-format))))
 
+;; go to personal.org
+(defun goto-personal () (interactive)
+       (find-file
+        (concat org-directory "/personal.org")))
+
+;; go to notes.org
+(defun goto-notes () (interactive)
+       (find-file
+        (concat org-directory "/notes.org")))
+
 ;; keybindings
 (map!
  (:leader
@@ -70,7 +80,11 @@
     (:desc "Next occurence of string"
      :n "j" #'evil-avy-goto-char-timer)
     (:desc "Today's journal"
-     :n "t" #'goto-today-journal))
+     :n "t" #'goto-today-journal)
+    (:desc "Personal.org"
+     :n "p" #'goto-personal)
+    (:desc "Notes.org"
+     :n "n" #'goto-notes))
   (:desc "Toggles scratch buffer"
   :n "x" #'toggle-scratch)))
 
