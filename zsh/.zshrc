@@ -136,4 +136,12 @@ case "$OSTYPE" in
   ;;
 esac
 
-[ -f "/Users/damien/.ghcup/env" ] && source "/Users/damien/.ghcup/env" # ghcup-env
+# ghcup
+case "$OSTYPE" in
+  darwin*)
+    [ -f "/Users/damien/.ghcup/env" ] && source "/Users/damien/.ghcup/env" # ghcup-env
+  ;;
+  linux*)
+    [ -f "/home/damien/.ghcup/env" ] && source "/home/damien/.ghcup/env" # ghcup-env
+  ;;
+esac
