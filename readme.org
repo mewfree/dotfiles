@@ -11,6 +11,9 @@ https://alexpearce.me/2016/02/managing-dotfiles-with-stow/
 =stow nvim= (=nvim/.config/.nvim/init.vim= -> =~/.config/nvim/=)
 
 =stow kitty= (=kitty/.config/kitty/kitty.conf= -> =~/.config/kitty/=)
+#+begin_src bash :results silent
+stow alacritty
+#+end_src
 
 =stow hlwm= (=hlwm/.config/herbstluftwm/autostart= ->
 =~/.config/herbstluftwm/=)
