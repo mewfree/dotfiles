@@ -12,6 +12,10 @@ case "$OSTYPE" in
     # coursier (Scala)
     export PATH="$PATH:$HOME/Library/Application Support/Coursier/bin"
   ;;
+  linux*)
+    # GUIX
+    export GUIX_LOCPATH="$HOME/.guix-profile/lib/locale"
+  ;;
 esac
 
 # direnv
