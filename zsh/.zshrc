@@ -82,19 +82,10 @@ case "$OSTYPE" in
 esac
 
 # Plugins
-case "$OSTYPE" in
-  darwin*)
-    fpath=(/opt/homebrew/share/zsh-compleitons $fpath)
-    source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-    source /opt/homebrew/share/zsh-history-substring-search/zsh-history-substring-search.zsh
-    source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-  ;;
-  linux*)
-    source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-    source /usr/share/zsh-history-substring-search/zsh-history-substring-search.zsh
-    source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-  ;;
-esac
+source ~/.zpm/zpm.zsh
+zpm load zsh-users/zsh-syntax-highlighting
+zpm load zsh-users/zsh-history-substring-search
+zpm load zsh-users/zsh-autosuggestions
 
 bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
