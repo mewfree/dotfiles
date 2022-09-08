@@ -82,6 +82,14 @@ case "$OSTYPE" in
 esac
 
 # Plugins
+case "$OSTYPE" in
+  darwin*)
+    [ -d $TMPDIR/zsh-501/ ] && rm -rf $TMPDIR/zsh-501/*
+  ;;
+  linux*)
+    [ -d /tmp/zsh-1000/ ] && rm -rf /tmp/zsh-1000/*
+  ;;
+esac
 source ~/.zpm/zpm.zsh
 zpm load zsh-users/zsh-syntax-highlighting
 zpm load zsh-users/zsh-history-substring-search
