@@ -56,24 +56,10 @@ alias ls="ls -Gph"
 alias ll="ls -l"
 alias la="ls -lA"
 
-alias gc="git commit"
-alias gca="git commit -a"
-alias gcm="git commit -a -m"
-alias gps="git push"
-alias gpsh="git push"
-alias gpl="git pull"
-alias gpll="git pull"
-alias gs="git status"
-
 alias whatismyip="curl http://ipecho.net/plain; echo;"
 
 alias rsp='rsync -rvP --ignore-existing'
 alias rsa='rsync -avP'
-
-alias muc='softwareupdate -l'
-alias mu='sudo softwareupdate -iva'
-alias mua='sudo softwareupdate -iva'
-alias mur='sudo softwareupdate -irv'
 
 case "$OSTYPE" in
   darwin*)
