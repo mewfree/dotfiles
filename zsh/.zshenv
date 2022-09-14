@@ -15,6 +15,8 @@ case "$OSTYPE" in
   linux*)
     # GUIX
     export GUIX_LOCPATH="$HOME/.guix-profile/lib/locale"
+    # cargo
+    . "$HOME/.cargo/env"
   ;;
 esac
 
