@@ -22,7 +22,9 @@
   (global-set-key (kbd "<mouse-5>") 'scroll-up-line))
 
 ;; alias julia-vterm => julia
-(defalias 'org-babel-execute:julia 'org-babel-execute:julia-vterm)
+(with-eval-after-load 'ob-julia-vterm
+  (defalias 'org-babel-execute:julia 'org-babel-execute:julia-vterm)
+  (defalias 'org-babel-variable-assignments:julia 'org-babel-variable-assignments:julia-vterm))
 ;; use my own LanguageServer.jl
 (setq lsp-julia-package-dir nil)
 
