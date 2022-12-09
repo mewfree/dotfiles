@@ -54,6 +54,16 @@
        (find-file
         (concat org-directory "/notes.org")))
 
+;; go to books.org
+(defun goto-books() (interactive)
+       (find-file
+        (concat org-directory "/media/books.org")))
+
+;; go to articles.org
+(defun goto-articles() (interactive)
+       (find-file
+        (concat org-directory "/media/articles.org")))
+
 ;; keybindings
 (map!
  (:leader
@@ -86,7 +96,11 @@
     (:desc "Personal.org"
      :n "p" #'goto-personal)
     (:desc "Notes.org"
-     :n "n" #'goto-notes))
+     :n "n" #'goto-notes)
+    (:desc "Books.org"
+     :n "b" #'goto-books)
+    (:desc "Articles.org"
+     :n "a" #'goto-articles))
   (:desc "Toggles scratch buffer"
   :n "x" #'toggle-scratch)))
 
