@@ -56,7 +56,7 @@ alias ls="ls -Gph"
 alias ll="ls -l"
 alias la="ls -lA"
 
-alias whatismyip="curl http://ipecho.net/plain; echo;"
+alias whatismyip="curl http://ipecho.net/plain"
 
 alias rsp='rsync -rvP --ignore-existing'
 alias rsa='rsync -avP'
