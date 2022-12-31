@@ -64,6 +64,11 @@
        (find-file
         (concat org-directory "/media/articles.org")))
 
+;; go to health.org
+(defun goto-health() (interactive)
+       (find-file
+        (concat org-directory "/health.org")))
+
 ;; keybindings
 (map!
  (:leader
@@ -100,7 +105,9 @@
     (:desc "Books.org"
      :n "b" #'goto-books)
     (:desc "Articles.org"
-     :n "a" #'goto-articles))
+     :n "a" #'goto-articles)
+    (:desc "Health.org"
+     :n "h" #'goto-health))
   (:desc "Toggles scratch buffer"
   :n "x" #'toggle-scratch)))
 
