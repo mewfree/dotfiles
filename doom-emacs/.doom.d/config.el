@@ -5,13 +5,13 @@
       user-mail-address "damien.gonot@gmail.com"
       doom-theme 'doom-vibrant
       display-line-numbers-type 'relative
-      projectile-project-search '("~/dev/")
+      projectile-project-search-path '("~/dev/")
       calendar-week-start-day 1
       display-time-24hr-format t
       dap-auto-configure-features '(locals expressions)
       evil-snipe-spillover-scope 'buffer
       lsp-zig-zls-executable "~/zls/zls"
-      org-latex-create-formula-image-program 'dvisvgm)
+      org-preview-latex-default-process 'dvisvgm)
 
 (display-time-mode 1)
 
