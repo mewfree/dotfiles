@@ -11,6 +11,7 @@ case "$OSTYPE" in
     export PUPPETEER_EXECUTABLE_PATH=`which chromium`
     # coursier (Scala)
     export PATH="$PATH:$HOME/Library/Application Support/Coursier/bin"
+    export OPENAI_API_KEY=$(security find-generic-password -s 'OpenAI API key' -w)
   ;;
   linux*)
     # GUIX
