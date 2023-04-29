@@ -11,7 +11,8 @@
       dap-auto-configure-features '(locals expressions)
       evil-snipe-spillover-scope 'buffer
       lsp-zig-zls-executable "~/zls/zls"
-      org-preview-latex-default-process 'dvisvgm)
+      org-preview-latex-default-process 'dvisvgm
+      chatgpt-shell-openai-key (getenv "OPENAI_API_KEY"))
 
 (display-time-mode 1)
 
@@ -182,6 +183,5 @@
 (add-hook 'org-mode-hook 'org-fragtog-mode)
 
 (use-package! org-autolink)
-(use-package! gpt)
 (after! org (set-company-backend! 'org-mode 'org-links-backend))
 (after! org-journal (set-company-backend! 'org-journal-mode 'org-links-backend))

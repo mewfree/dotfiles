@@ -19,8 +19,6 @@
 (package! org-autolink
   :recipe (:local-repo "~/dev/org-autolink"))
 (package! ob-kotlin)
-(package! gpt
-  :recipe (:local-repo "~/dev/gpt.el"))
 (package! nyan-mode)
 (package! chatgpt-shell
   :recipe (:host github :repo "xenodium/chatgpt-shell"))
