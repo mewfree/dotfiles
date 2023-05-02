@@ -89,6 +89,9 @@
      :n "D" #'today-with-time)
     (:desc "Add timestamp"
      :n "t" #'timestamp))
+  (:prefix "o"
+    (:desc "Open ChatGPT shell"
+     :n "g" #'chatgpt-shell))
   (:prefix ("l" . "LSP")
     (:desc "LSP describe thing at point"
      :n "d" #'lsp-describe-thing-at-point)
