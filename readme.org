@@ -46,3 +46,7 @@ stow git
 #+begin_src bash :results silent
 stow curl
 #+end_src
+
+#+begin_src bash :results silent
+stow dig
+#+end_src
