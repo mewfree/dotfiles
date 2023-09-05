@@ -191,6 +191,7 @@
                  ("\\subsubsection{%s}" . "\\subsubsection*{%s}"))))
 
 (add-to-list 'initial-frame-alist '(fullscreen . maximized))
+(add-to-list 'default-frame-alist '(undecorated . t))
 
 (add-hook 'org-mode-hook 'org-fragtog-mode)
 
