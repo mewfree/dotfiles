@@ -8,6 +8,7 @@
       projectile-project-search-path '("~/dev/")
       calendar-week-start-day 1
       display-time-24hr-format t
+      display-time-default-load-average nil
       dap-auto-configure-features '(locals expressions)
       evil-snipe-spillover-scope 'buffer
       lsp-zig-zls-executable "~/zls/zls"
@@ -15,6 +16,7 @@
       chatgpt-shell-openai-key (getenv "OPENAI_API_KEY"))
 
 (display-time-mode 1)
+(display-battery-mode 1)
 
 ;; enable scrolling
 (unless (display-graphic-p)
