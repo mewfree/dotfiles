@@ -50,3 +50,7 @@ stow curl
 #+begin_src bash :results silent
 stow dig
 #+end_src
+
+#+begin_src bash :results silent
+stow zellij
+#+end_src
