@@ -43,7 +43,7 @@
        vterm                           ; the best terminal emulation in Emacs
 
        :checkers
-       syntax                          ; tasing you for every semicolon you forget
+       (syntax +childframe)            ; tasing you for every semicolon you forget
        spell                           ; tasing you for misspelling mispelling
        ;;grammar                       ; tasing grammar mistake every you make
 
@@ -67,7 +67,7 @@
        :lang
        ;;(cc +lsp +tree-sitter)        ; C/C++/Obj-C madness
        (clojure +lsp)                  ; java with a lisp
-       common-lisp                     ; if you've seen one lisp, you've seen them all
+       ;;common-lisp                     ; if you've seen one lisp, you've seen them all
        crystal                         ; ruby at the speed of c
        data                            ; config/data formats
        (dart +flutter +lsp)            ; paint ui and not much else

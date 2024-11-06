@@ -40,7 +40,7 @@
 (defun toggle-scratch () (interactive)
        (if (get-buffer "*doom:scratch*")
            (kill-buffer (get-buffer "*doom:scratch*"))
-           (doom/open-scratch-buffer)))
+         (doom/open-scratch-buffer)))
 
 ;; go to today's journal
 (defun goto-today-journal () (interactive)
@@ -76,53 +76,53 @@
 (map!
  (:leader
   (:prefix "TAB"
-    (:desc "Next workspace"
-     :n "n" #'+workspace:switch-next)
-    (:desc "Previous workspace"
-     :n "p" #'+workspace:switch-previous)
-    (:desc "New workspace"
-     :n "c" #'+workspace/new)
-    (:desc "Next workspace"
-     :n "SPC" #'+workspace:switch-next))
+           (:desc "Next workspace"
+            :n "n" #'+workspace:switch-next)
+           (:desc "Previous workspace"
+            :n "p" #'+workspace:switch-previous)
+           (:desc "New workspace"
+            :n "c" #'+workspace/new)
+           (:desc "Next workspace"
+            :n "SPC" #'+workspace:switch-next))
   (:prefix "i"
-    (:desc "Add ISO 8601 date"
-     :n "d" #'today)
-    (:desc "Add ISO 8601 date and time"
-     :n "D" #'today-with-time)
-    (:desc "Add timestamp"
-     :n "t" #'timestamp))
+           (:desc "Add ISO 8601 date"
+            :n "d" #'today)
+           (:desc "Add ISO 8601 date and time"
+            :n "D" #'today-with-time)
+           (:desc "Add timestamp"
+            :n "t" #'timestamp))
   (:prefix "o"
-    (:desc "Open ChatGPT shell"
-     :n "g" #'chatgpt-shell))
+           (:desc "Open ChatGPT shell"
+            :n "g" #'chatgpt-shell))
   (:prefix ("l" . "LSP")
-    (:desc "LSP describe thing at point"
-     :n "d" #'lsp-describe-thing-at-point)
-    (:desc "LSP go to definition"
-     :n "f" #'lsp-find-definition))
+           (:desc "LSP describe thing at point"
+            :n "d" #'lsp-describe-thing-at-point)
+           (:desc "LSP go to definition"
+            :n "f" #'lsp-find-definition))
   (:prefix ("j" . "Jump to")
-    (:desc "Next occurence of string"
-     :n "j" #'evil-avy-goto-char-timer)
-    (:desc "Today's journal"
-     :n "t" #'goto-today-journal)
-    (:desc "Personal.org"
-     :n "p" #'goto-personal)
-    (:desc "Notes.org"
-     :n "n" #'goto-notes)
-    (:desc "Books.org"
-     :n "b" #'goto-books)
-    (:desc "Articles.org"
-     :n "a" #'goto-articles)
-    (:desc "Health.org"
-     :n "h" #'goto-health))
+           (:desc "Next occurence of string"
+            :n "j" #'evil-avy-goto-char-timer)
+           (:desc "Today's journal"
+            :n "t" #'goto-today-journal)
+           (:desc "Personal.org"
+            :n "p" #'goto-personal)
+           (:desc "Notes.org"
+            :n "n" #'goto-notes)
+           (:desc "Books.org"
+            :n "b" #'goto-books)
+           (:desc "Articles.org"
+            :n "a" #'goto-articles)
+           (:desc "Health.org"
+            :n "h" #'goto-health))
   (:desc "Toggles scratch buffer"
-  :n "x" #'toggle-scratch)))
+   :n "x" #'toggle-scratch)))
 
 ;; custom task priorities
 (use-package! org-fancy-priorities
-              :hook (org-mode . org-fancy-priorities-mode)
-              :config (setq org-fancy-priorities-list '((?A . "HIGH")
-                                                        (?B . "MEDIUM")
-                                                        (?C . "LOW"))))
+  :hook (org-mode . org-fancy-priorities-mode)
+  :config (setq org-fancy-priorities-list '((?A . "HIGH")
+                                            (?B . "MEDIUM")
+                                            (?C . "LOW"))))
 ;; config Elixir LSP mode
 (use-package lsp-mode
   :commands lsp
@@ -133,7 +133,7 @@
   (add-to-list 'exec-path "~/.config/elixir-ls"))
 
 ;; activate gleam-mode for .gleam files
-(add-to-list 'auto-mode-alist '("\\.gleam$" . gleam-mode))
+;; (add-to-list 'auto-mode-alist '("\\.gleam$" . gleam-mode))
 
 ;; activate lsp-tailwindcss
 (use-package! lsp-tailwindcss)
@@ -149,40 +149,40 @@
 
 ;; org-related config
 (after! org
-        (setq org-directory "~/meworg"
-              org-cycle-separator-lines 1
-              org-default-notes-file (concat org-directory "/notes.org")
-              org-agenda-files (append (list (concat org-directory "/personal.org")) (directory-files-recursively (concat org-directory "/projects") "\\.org$"))
-              org-todo-keywords '((sequence "IDEA(i)" "TODO(t)" "PROGRESS(p)" "WAITING(w)" "|" "DONE(d)" "CANCELLED(c)"))
-              org-todo-keyword-faces '(("IDEA" . "mediumpurple1")
-                                       ("TODO" . "turquoise2")
-                                       ("PROGRESS" . "chartreuse2")
-                                       ("WAITING" . "grey42")
-                                       ("DONE" . "grey42")
-                                       ("CANCELLED" . "grey42"))
-              org-journal-dir (concat org-directory "/journal/daily")
-              org-journal-date-prefix "#+title: "
-              org-journal-date-format "%Y-%m-%d"
-              org-journal-file-format "%Y-%m-%d.org"
-              org-journal-time-prefix "\n* "
-              org-journal-hide-entries-p nil
-              org-babel-clojure-backend 'cider
-              org-link-file-path-type 'relative
-              org-capture-templates '(("t" "Personal todo" entry
-                                       (file+headline (lambda () (concat org-directory "/personal.org")) "Tasks")
-                                       "* TODO %?" :empty-lines-before 1)
-                                      ("n" "Personal note" entry
-                                       (file (lambda () (concat org-directory "/notes.org")))
-                                       "* %?" :empty-lines-before 1)
-                                      ("i" "New idea" entry
-                                       (file (lambda () (concat org-directory "/ideas.org")))
-                                       "* %?" :empty-lines-before 1))
-              org-plantuml-jar-path (expand-file-name "~/.config/plantuml/plantuml.jar")
-              org-ditaa-jar-path (expand-file-name "~/.config/ditaa/ditaa.jar")
-              ob-mermaid-cli-path "/opt/homebrew/opt/mermaid-cli/bin/mmdc"
-              deft-directory org-directory
-              deft-extensions '("org")
-              deft-recursive t))
+  (setq org-directory "~/meworg"
+        org-cycle-separator-lines 1
+        org-default-notes-file (concat org-directory "/notes.org")
+        org-agenda-files (append (list (concat org-directory "/personal.org")) (directory-files-recursively (concat org-directory "/projects") "\\.org$"))
+        org-todo-keywords '((sequence "IDEA(i)" "TODO(t)" "PROGRESS(p)" "WAITING(w)" "|" "DONE(d)" "CANCELLED(c)"))
+        org-todo-keyword-faces '(("IDEA" . "mediumpurple1")
+                                 ("TODO" . "turquoise2")
+                                 ("PROGRESS" . "chartreuse2")
+                                 ("WAITING" . "grey42")
+                                 ("DONE" . "grey42")
+                                 ("CANCELLED" . "grey42"))
+        org-journal-dir (concat org-directory "/journal/daily")
+        org-journal-date-prefix "#+title: "
+        org-journal-date-format "%Y-%m-%d"
+        org-journal-file-format "%Y-%m-%d.org"
+        org-journal-time-prefix "\n* "
+        org-journal-hide-entries-p nil
+        org-babel-clojure-backend 'cider
+        org-link-file-path-type 'relative
+        org-capture-templates '(("t" "Personal todo" entry
+                                 (file+headline (lambda () (concat org-directory "/personal.org")) "Tasks")
+                                 "* TODO %?" :empty-lines-before 1)
+                                ("n" "Personal note" entry
+                                 (file (lambda () (concat org-directory "/notes.org")))
+                                 "* %?" :empty-lines-before 1)
+                                ("i" "New idea" entry
+                                 (file (lambda () (concat org-directory "/ideas.org")))
+                                 "* %?" :empty-lines-before 1))
+        org-plantuml-jar-path (expand-file-name "~/.config/plantuml/plantuml.jar")
+        org-ditaa-jar-path (expand-file-name "~/.config/ditaa/ditaa.jar")
+        ob-mermaid-cli-path "/opt/homebrew/opt/mermaid-cli/bin/mmdc"
+        deft-directory org-directory
+        deft-extensions '("org")
+        deft-recursive t))
 
 (with-eval-after-load 'ox-latex
   (add-to-list 'org-latex-classes
