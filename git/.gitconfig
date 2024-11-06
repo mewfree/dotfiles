@@ -1,7 +1,7 @@
 [user]
 	email = damien.gonot@gmail.com
     name = Damien Gonot
-    signingkey = 686E37EEC6018364
+    signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOcGYlTLVV/luqaWyFK/RnEcY5/o6QfYpjdj4T0KTaIF damien.gonot@gmail.com
 [core]
 	editor = nvim
 [pull]
@@ -10,5 +10,7 @@
 	defaultBranch = main
 [commit]
 	gpgsign = true
+[gpg]
+    format = ssh
 [github]
 	user = mewfree
