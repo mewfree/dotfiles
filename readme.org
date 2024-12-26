@@ -54,3 +54,7 @@ stow dig
 #+begin_src bash :results silent
 stow zellij
 #+end_src
+
+#+begin_src bash :results silent
+stow ghostty
+#+end_src
