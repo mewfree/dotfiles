@@ -109,6 +109,7 @@
 
        :app
        calendar
+       emms
 
        :config
        ;;literate
