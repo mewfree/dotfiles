@@ -58,3 +58,7 @@ stow zellij
 #+begin_src bash :results silent
 stow ghostty
 #+end_src
+
+#+begin_src bash :results silent
+stow helix
+#+end_src
