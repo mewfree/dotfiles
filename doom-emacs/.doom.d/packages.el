@@ -1,8 +1,6 @@
 ;; -*- no-byte-compile: t; -*-
 ;;; $DOOMDIR/packages.el
 
-(unpin! org)
-(package! org-mode :pin "3ec093312201b5ee02e77cdaff166d3c55d5155f")
 (package! org-super-agenda)
 (package! org-fancy-priorities)
 (package! ob-julia-vterm)
