@@ -24,6 +24,8 @@
 (package! nyan-mode)
 (package! chatgpt-shell
   :recipe (:host github :repo "xenodium/chatgpt-shell"))
+(package! acp :recipe (:host github :repo "xenodium/acp.el"))
+(package! agent-shell :recipe (:host github :repo "xenodium/agent-shell"))
 (package! literate-calc-mode)
 (package! copilot
   :recipe (:host github :repo "zerolfx/copilot.el" :files ("*.el" "dist")))
