@@ -165,6 +165,7 @@
         org-journal-date-format "%Y-%m-%d"
         org-journal-file-format "%Y-%m-%d.org"
         org-journal-time-prefix "\n* "
+        org-journal-time-format "%R"
         org-journal-hide-entries-p nil
         org-babel-clojure-backend 'cider
         org-link-file-path-type 'relative
