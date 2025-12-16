@@ -14,7 +14,6 @@ set number
 set hidden
 set scrolloff=5
 set visualbell
-set pastetoggle=<F4>
 set gdefault
 set noswapfile
 set noshowmode
@@ -36,7 +35,7 @@ Plug 'mxw/vim-jsx', { 'for': 'javascript.jsx' }
 Plug 'moll/vim-bbye'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'justinmk/vim-sneak'
-Plug 'ervandew/supertab'
+Plug 'hisbaan/supertab.nvim'
 Plug 'rakr/vim-one'
 Plug 'elixir-lang/vim-elixir', { 'for': 'elixir' }
 Plug 'digitaltoad/vim-pug', { 'for': 'pug' }
