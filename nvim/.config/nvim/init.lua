@@ -159,9 +159,7 @@ vim.api.nvim_create_autocmd('WinEnter', {
 
 -- Plugin specific configurations
 vim.g.jsx_ext_required = 0
-vim.g.airline_powerline_fonts = 1
-vim.g.airline_extensions_hunks_non_zero_only = 1
-vim.g.airline_theme = 'one'
+vim.g.airline_powerline_fonts = 0
 vim.g.bufferline_echo = 0
 vim.g.sneak_label = 1
 vim.g.slime_target = "tmux"
