@@ -52,10 +52,56 @@ zstyle ':completion:*' file-sort modification reverse
 zstyle ':completion:*' list-colors "=(#b) #([0-9]#)*=36=31"
 
 # Aliases
-alias ls="ls -Gph"
-alias ll="ls -l"
-alias la="ls -lA"
+# Modern tool replacements (fallback to original if not installed)
+if command -v eza &> /dev/null; then
+  alias ls="eza -GF --icons --git"
+  alias ll="eza -l --icons --git"
+  alias la="eza -la --icons --git"
+  alias lt="eza --tree --level=2 --icons --git"
+else
+  alias ls="ls -Gp"
+  alias ll="ls -l"
+  alias la="ls -lA"
+fi
 
+# Modern cat replacement
+if command -v bat &> /dev/null; then
+  alias cat="bat --style=plain --pager=never"
+  alias bat="bat --style=full --pager=auto"
+fi
+
+# Modern du replacement
+if command -v dust &> /dev/null; then
+  alias du="dust"
+fi
+
+# Modern df replacement
+if command -v duf &> /dev/null; then
+  alias df="duf"
+fi
+
+# Modern top replacement
+if command -v btm &> /dev/null; then
+  alias top="btm"
+  alias htop="btm"
+fi
+
+# Modern ping replacement
+if command -v gping &> /dev/null; then
+  alias ping="gping"
+fi
+
+# Modern dig replacement
+if command -v dog &> /dev/null; then
+  alias dig="dog"
+fi
+
+# Modern curl replacement
+if command -v http &> /dev/null; then
+  alias curl="http"
+fi
+
+# Original aliases
 alias whatismyip="curl http://ipecho.net/plain"
 
 alias rsp='rsync -rvP --ignore-existing'
@@ -92,7 +138,11 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=3"
 # Auto ls after cd
 function chpwd() {
   emulate -L zsh
-  ls -a
+  if command -v eza &> /dev/null; then
+    eza -a --icons --git
+  else
+    ls -a
+  fi
 }
 
 # Show the mode in vi-mode
