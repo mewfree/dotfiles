@@ -123,3 +123,8 @@ case "$OSTYPE" in
     [ -f "/home/damien/.ghcup/env" ] && source "/home/damien/.ghcup/env" # ghcup-env
   ;;
 esac
+
+# rustup
+source "$HOME/.cargo/env"
+
+source /Users/damien/.config/broot/launcher/bash/br
