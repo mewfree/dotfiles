@@ -15,6 +15,11 @@
       org-preview-latex-default-process 'dvisvgm
       chatgpt-shell-openai-key (getenv "OPENAI_API_KEY"))
 
+;; Set default font to Monaco size 13 on macOS
+(when (eq system-type 'darwin)
+  (set-face-attribute 'default nil :font "Monaco-13")
+  (add-to-list 'default-frame-alist '(font . "Monaco-13")))
+
 (display-time-mode 1)
 (display-battery-mode 1)
 
