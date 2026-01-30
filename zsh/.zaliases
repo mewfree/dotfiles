@@ -1,0 +1,55 @@
+# Modern tool replacements (fallback to original if not installed)
+if command -v eza &> /dev/null; then
+  alias ls="eza -GF --icons --git"
+  alias ll="eza -l --icons --git"
+  alias la="eza -la --icons --git"
+  alias lt="eza --tree --level=2 --icons --git"
+else
+  alias ls="ls -Gp"
+  alias ll="ls -l"
+  alias la="ls -lA"
+fi
+
+# Modern cat replacement
+if command -v bat &> /dev/null; then
+  alias cat="bat --style=plain --pager=never"
+  alias bat="bat --style=full --pager=auto"
+fi
+
+# Modern du replacement
+if command -v dust &> /dev/null; then
+  alias du="dust"
+fi
+
+# Modern df replacement
+if command -v duf &> /dev/null; then
+  alias df="duf"
+fi
+
+# Modern top replacement
+if command -v btm &> /dev/null; then
+  alias top="btm"
+  alias htop="btm"
+fi
+
+# Modern ping replacement
+if command -v gping &> /dev/null; then
+  alias ping="gping"
+fi
+
+# Modern dig replacement
+if command -v dog &> /dev/null; then
+  alias dig="dog"
+fi
+
+# Original aliases
+alias whatismyip="curl http://ipecho.net/plain"
+
+alias rsp='rsync -rvP --ignore-existing'
+alias rsa='rsync -avP'
+
+case "$OSTYPE" in
+  darwin*)
+    alias killaudio="sudo kill -9 `ps ax|grep 'coreaudio[a-z]' | awk '{print $1}'`"
+  ;;
+esac
