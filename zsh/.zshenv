@@ -14,6 +14,8 @@ case "$OSTYPE" in
     export OPENAI_API_KEY=$(security find-generic-password -s 'OpenAI API key' -w)
     # Antigravity
     export PATH="/Users/damien/.antigravity/antigravity/bin:$PATH"
+    # LM Studio
+    export PATH="$PATH:/Users/damien/.cache/lm-studio/bin"
   ;;
   linux*)
     # GUIX
