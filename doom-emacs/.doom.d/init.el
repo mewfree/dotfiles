@@ -110,6 +110,7 @@
        :app
        calendar
        emms
+       (rss +org)
 
        :config
        ;;literate

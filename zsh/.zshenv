@@ -12,8 +12,8 @@ case "$OSTYPE" in
     # coursier (Scala)
     export PATH="$PATH:$HOME/Library/Application Support/Coursier/bin"
     export OPENAI_API_KEY=$(security find-generic-password -s 'OpenAI API key' -w)
-    # Antigravity
-    export PATH="/Users/damien/.antigravity/antigravity/bin:$PATH"
+    # Antigravity CLI
+    export PATH="/Users/damien/.local/bin:$PATH"
     # LM Studio
     export PATH="$PATH:/Users/damien/.cache/lm-studio/bin"
   ;;

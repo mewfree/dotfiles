@@ -1,23 +1,15 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "keybinds": {
-    "leader": "alt+x",
-    "session_new": "none",
-    "session_interrupt": "none",
-    "terminal_suspend": "none",
-    "agent_cycle": "none",
-    "agent_cycle_reverse": "none"
-  },
   "provider": {
-    "ollama": {
+    "lmstudio": {
       "npm": "@ai-sdk/openai-compatible",
-      "name": "Ollama",
+      "name": "LM Studio (local)",
       "options": {
-        "baseURL": "http://localhost:11434/v1"
+        "baseURL": "http://localhost:1234/v1"
       },
       "models": {
-        "glm-4.7-flash": {
-          "name": "glm-4.7-flash"
+        "google/gemma-4-26b-a4b": {
+          "name": "Gemma 4 26B A4B"
         }
       }
     }
