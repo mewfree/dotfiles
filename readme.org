@@ -1,4 +1,11 @@
 * dotfiles
+
+Run everything at once:
+#+begin_src bash :results silent
+./install.sh
+#+end_src
+
+Or stow packages individually:
 #+begin_src bash :results silent
 stow zsh
 #+end_src

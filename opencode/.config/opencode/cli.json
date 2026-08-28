@@ -1,0 +1,11 @@
+{
+  "theme": {
+    "name": "opencode"
+  },
+  "session": {
+    "sidebar": "hide",
+    "scrollbar": false,
+    "thinking": "show"
+  },
+  "animations": true
+}

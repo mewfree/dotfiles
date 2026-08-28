@@ -111,7 +111,6 @@ keybinds clear-defaults=true {
             }
             SwitchToMode "normal"
         }
-        bind "Ctrl y" { SwitchToMode "normal"; }
         bind "p" {
             LaunchOrFocusPlugin "plugin-manager" {
                 floating true
@@ -126,6 +125,7 @@ keybinds clear-defaults=true {
             }
             SwitchToMode "normal"
         }
+        bind "Ctrl y" { SwitchToMode "normal"; }
     }
     shared_except "locked" {
         bind "Alt +" { Resize "Increase"; }
